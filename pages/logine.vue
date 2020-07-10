@@ -7,10 +7,11 @@
       <v-form>
         <v-text-field label="Username" prepend-icon="mdi-account-circle" />
         <v-text-field
-          type="password"
-          prepend-icon="lock"
-          label="password"
-          append-icon="visibility_off"
+          :type="showPassword ? 'text' : 'password'"
+          label="Password"
+          prepend-icon="mdi-lock"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showPassword = !showPassword"
         />
       </v-form>
     </v-card-text>
@@ -19,7 +20,17 @@
         <v-btn color="warning" dark>Rgister</v-btn>
       </nuxt-link>
       <v-spacer></v-spacer>
-      <v-btn color="error" dark>Login</v-btn>
+      <v-btn color="indigo" dark>Login</v-btn>
     </v-card-actions>
   </v-card>
 </template>
+<script>
+export default {
+  name: "App",
+  data() {
+    return {
+      showPassword: false
+    };
+  }
+};
+</script>
