@@ -1,5 +1,5 @@
-<template>
-  <v-card>
+<template block color="cyan darken-2">
+  <v-card block color="cyan darken-2">
     <v-card-title>
       <h1>Login</h1>
     </v-card-title>
@@ -17,10 +17,10 @@
     </v-card-text>
     <v-card-actions>
       <nuxt-link to="/Rgister">
-        <v-btn color="warning" dark>Rgister</v-btn>
+        <v-btn color="blue accent-2" dark>Rgister</v-btn>
       </nuxt-link>
       <v-spacer></v-spacer>
-      <v-btn color="indigo" dark>Login</v-btn>
+      <v-btn color="blue accent-2" dark>Login</v-btn>
     </v-card-actions>
   </v-card>
 </template>
