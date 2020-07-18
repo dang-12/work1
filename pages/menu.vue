@@ -5,12 +5,12 @@
         <div class="text-center">
           <div class="my-2">
             <nuxt-link to="/line">
-              <v-btn x-small color="pink" dark>กิจกรรมเข้าแถว</v-btn>
+              <v-btn color="pink" dark>กิจกรรมเข้าแถว</v-btn>
             </nuxt-link>
           </div>
           <div class="my-2">
             <nuxt-link to="/home">
-              <v-btn small color="primary" dark>กิจกรรม Homeroom</v-btn>
+              <v-btn color="primary" dark>กิจกรรม Homeroom</v-btn>
             </nuxt-link>
           </div>
           <div class="my-2">
@@ -25,7 +25,7 @@
           </div>
           <div class="my-2">
             <nuxt-link to="/#">
-              <v-btn x-large color="success" dark>กลับหน้าหลัก</v-btn>
+              <v-btn color="success" dark>กลับหน้าหลัก</v-btn>
             </nuxt-link>
           </div>
         </div>
