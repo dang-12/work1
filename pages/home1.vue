@@ -52,6 +52,11 @@
 </template>
 <script>
 export default {
+  layout: "default"
+};
+</script>
+<script>
+export default {
   data: () => ({
     items: [
       {
