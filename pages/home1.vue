@@ -6,15 +6,17 @@
         <v-container>
           <v-row dense>
             <v-col cols="12">
-              <v-card color="teal accent-3" dark>
-                <v-card-title class="headline">Unlimited music now</v-card-title>
+              <nuxt-link to="/home2">
+                <v-card color="teal accent-3" dark>
+                  <v-card-title class="headline">ประวัติ นายโยธิน นุขุนทด</v-card-title>
 
-                <v-card-subtitle>Listen to your favorite artists and albums whenever and wherever, online and offline.</v-card-subtitle>
+                  <v-card-subtitle></v-card-subtitle>
 
-                <v-card-actions>
-                  <v-btn text>Listen Now</v-btn>
-                </v-card-actions>
-              </v-card>
+                  <v-card-actions>
+                    <v-btn text>Listen Now</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </nuxt-link>
             </v-col>
 
             <v-col cols="12">
@@ -50,13 +52,10 @@
     </v-container>
   </div>
 </template>
+
 <script>
 export default {
-  layout: "default"
-};
-</script>
-<script>
-export default {
+  layout: "default2",
   data: () => ({
     items: [
       {

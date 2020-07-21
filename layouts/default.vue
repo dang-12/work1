@@ -13,60 +13,42 @@
       <!-- -->
     </v-navigation-drawer>
 
-    <div>
-      <v-app-bar color="teal darken-4" dense dark>
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        <v-toolbar-title>หน้าหลัก</v-toolbar-title>
-
-        <v-btn icon>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
-      </v-app-bar>
-    </div>
-
     <!-- Sizes your content based upon application components -->
     <v-main>
-      <v-content>
-        <nuxt />
-      </v-content>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
     </v-main>
 
     <v-footer dark padless>
       <v-card class="flex" flat tile>
         <v-card-title class="teal">
-          <v-btn icon="mdi-facebook">
-            <v-icon size="24px">{{ icon }}</v-icon>
-          </v-btn>
-          <v-spacer></v-spacer>
-          <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
-            <v-icon size="24px">{{ icon }}</v-icon>
-          </v-btn>
+          <div class="text-center">
+            <v-bottom-sheet v-model="sheet" inset>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn color="orange" dark v-bind="attrs" v-on="on">กลับหน้าหลัก</v-btn>
+              </template>
+              <v-sheet class="text-center" height="200px">
+                <nuxt-link to="/home1">
+                  <v-btn class="mt-6" text color="error" @click="sheet = !sheet">ตกลง</v-btn>
+                </nuxt-link>
+                <div class="my-3">คุณต้องการกลับหน้าหลัก ใช้ไหม</div>
+              </v-sheet>
+            </v-bottom-sheet>
+          </div>
         </v-card-title>
-
-        <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} —
-          <strong>Vuetify</strong>
-        </v-card-text>
       </v-card>
     </v-footer>
   </v-app>
 </template>
-
-
 <script>
 export default {
-  data: function() {
-    return {
-      icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"]
-    };
-  }
+  data: () => ({
+    sheet: false
+  })
 };
 </script>
+
+
