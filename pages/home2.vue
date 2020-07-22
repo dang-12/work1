@@ -43,7 +43,7 @@
 </template>
 <script>
 export default {
-  layout: "default",
+  layout: "public",
   data: () => ({
     show: false
   }),
