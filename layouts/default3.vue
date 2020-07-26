@@ -67,7 +67,7 @@
 <script>
 export default {
   data: () => ({
-    drawer: false
-  })
+    drawer: false,
+  }),
 };
 </script>
