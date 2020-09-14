@@ -24,7 +24,9 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <nuxt-link :to="item.link">
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </nuxt-link>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -97,9 +99,9 @@ export default {
   data() {
     return {
       items: [
-        { title: "Home", icon: "mdi-home-city" },
-        { title: "ประวัติ", icon: "book" },
-        { title: "สมาชิค", icon: "account_box" },
+        { title: "Home", icon: "mdi-home-city", link: "logine" },
+        { title: "ประวัติ", icon: "book", link: "a1" },
+        { title: "สมาชิค", icon: "account_box", link: "a10" },
         { title: "สินค้าแนะนำ", icon: "request_quote" },
         { title: "สินค้าขาย", icon: "shopping_cart" },
         { title: "บทความถามตอบ", icon: "wysiwyg" },

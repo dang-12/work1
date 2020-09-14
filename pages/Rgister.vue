@@ -37,6 +37,7 @@
 </template>
 <script>
 export default {
+  layout: "public",
   name: "App",
   data(){
     return {

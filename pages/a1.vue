@@ -1,20 +1,12 @@
-
 <template block color="cyan darken-2">
   <v-card block color="cyan darken-2">
     <v-card-title>
-      <h1>Login {{gpa}}</h1>
+      <h1>สถานศึกษา</h1>
     </v-card-title>
     <v-card-text>
       <v-form>
-        <v-text-field v-model="user" label="Username" prepend-icon="mdi-account-circle" />
-        <v-text-field
-          :type="showPassword ? 'text' : 'password'"
-          label="Password"
-          v-model="password"
-          prepend-icon="mdi-lock"
-          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="showPassword = !showPassword"
-        />
+        <v-text-field v-model="school_id" label="รหัสสถานศึกษา" prepend-icon="mdi-account-circle" />
+        <v-text-field v-model="school" label="ชื่อสถานศึกษา " prepend-icon="mdi-account-circle" />
       </v-form>
     </v-card-text>
     <v-card-actions>
@@ -26,15 +18,16 @@
     </v-card-actions>
   </v-card>
 </template>
+
 <script>
 export default {
   layout: "default4",
   name: "App",
   data() {
     return {
-      showPassword: false,
       user: "",
       password: "",
+      school: "",
       gpa: "",
     };
   },
@@ -43,11 +36,13 @@ export default {
       console.log("do save");
       console.log("user:", this.user);
       console.log("password:", this.password);
-      //this.$router.push("/Rgister");
-      let res = await fetch("http://localhost:7001/list?user=" + this.user);
+      //this.$router.push('/register')
+      let res = await fetch(
+        "http://localhost:7001/list?school_id=" + this.school_id
+      );
       let data = await res.json();
-      console.log("data=", data.rows[0].GPA);
-      this.gpa = data.rows[0].GPA;
+      console.log("data=", data.rows[0].school_name);
+      this.school = data.rows[0].school_name;
     },
   },
 };
